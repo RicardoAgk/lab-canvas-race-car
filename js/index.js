@@ -29,15 +29,11 @@ function updateCanvas(){
 
 }
 
-window.onload = () => {
-  document.getElementById('start-button').onclick = () => {
-    startGame();
-  };
 
-  function startGame() {
+function startGame() {
     updateCanvas();
   }
-};
+
 
 function stop() {
   cancelAnimationFrame(interval)
@@ -136,7 +132,7 @@ document.addEventListener('keydown', e => {
       player.moveRight();
       break;
   }
-  //updateCanvas();
+  updateCanvas();
 });
 
 function updateObstacles() {
@@ -171,7 +167,5 @@ function checkGameOver() {
   if (crashed) {
       stop();
       gameOver()
-      
-
   }
 }
